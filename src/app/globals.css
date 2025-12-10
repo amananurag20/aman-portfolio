@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142.1 76.2% 36.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 144.9 80.4% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142.4 71.8% 29.2%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.homepagecontactbtn {
+  padding: 18px;
+  display: none; /* Hide by default for small screens */
+  gap: 10px;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  border: 2px solid #808080 !important;
+  transition: all ease-in 0.2s !important;
+}
+
+/* Show on medium screens and larger */
+@media (min-width: 768px) {
+  .homepagecontactbtn {
+    display: flex;
+  }
+}
+
+@keyframes rotate360 {
+  from { transform: rotate(0deg) scale(1.5); }
+  to { transform: rotate(360deg) scale(1.5); }
+}
+
+.rotate-360 {
+  animation: rotate360 0.5s linear;
+}
+
+@keyframes smoothRotate {
+  from { transform: rotate(0deg) scale(1.25); }
+  to { transform: rotate(360deg) scale(1.25); }
+}
+
+.rotate-smooth {
+  animation: smoothRotate 2s linear infinite;
+}
+
+.homepagecontactbtn:hover {
+  box-shadow: none;
+  transform: translateY(6px) !important;
+  transition: all ease-in 0.2s;
+  opacity: 1 !important;
+}
+
+@layer utilities {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Mobile chat optimizations */
+@media (max-width: 768px) {
+  .chat-container {
+    height: calc(100vh - 200px);
+    max-height: 70vh;
+  }
+  
+  .mobile-bottom-spacing {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 4rem);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-220px * 4));
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Add smooth transition for scroll behavior */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: none;
+  pointer-events: auto;
+  touch-action: pan-x;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
