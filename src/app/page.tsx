@@ -74,7 +74,7 @@ const page = () => {
           <FlipWordsDemo />
 
           <p className=" opacity-80 text-sm lg:text-xl lg:mb-2 font-medium">
-            Software Engineer @< span className="  text-blue-500  font-bold"> <a href="https://sensationsolutions.com/">Sensation Software Solutions</a> </span>
+            Software Engineer @<span className="text-blue-500 font-bold"> <a href="https://klovertel.com/">Klovertel Private Limited</a> </span>
           </p>
           <div className="flex flex-col md:flex-row items-right mt-3 gap-1 md:gap-3">
             <CopyCmd />

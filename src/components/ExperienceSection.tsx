@@ -19,10 +19,10 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    period: "Dec 2024 - Present",
+    period: "January 2024 - Present",
     title: "Full Stack Developer",
-    company: "Sensation Software Solutions, Pvt. Ltd",
-    location: "Mohali, Punjab",
+    company: "Klovertel Private Limited",
+    location: "New Delhi, Punjab",
     achievements: [
       {
         text: "Developed Trace Venue - a cross-platform desktop application using Electron.js for venue and accommodation management system, featuring offline-first architecture, local database synchronization, native OS integrations, and seamless deployment across Windows, macOS, and Linux platforms.",
@@ -55,10 +55,10 @@ const experiences: ExperienceItem[] = [
     ]
   },
   {
-    period: "July 2024 - Present",
+    period: "July 2023 - January 2024",
     title: "Full Stack Developer",
-    company: "Sensation Software Solutions, Pvt. Ltd",
-    location: "Mohali, Punjab",
+    company: "Klovertel Private Limited",
+    location: "New Delhi, India",
     achievements: [
       {
         text: "Contributed to AppyPay (Digital Payment Platform) by designing a responsive merchant dashboard using Material-UI and custom CSS animations, implementing a dynamic theming system with compound components that reduced code redundancy by 40% while maintaining consistent UX across multiple merchant portals.",
@@ -75,10 +75,10 @@ const experiences: ExperienceItem[] = [
     ]
   },
   {
-    period: "Jan 2024 - June 2024",
+    period: "Jan 2023 - June 2023",
     title: "Software Developer Intern",
-    company: "Sensation Software Solutions, Pvt. Ltd",
-    location: "Mohali, Punjab",
+    company: "Klovertel Private Limited",
+    location: "New Delhi, India",
     achievements: [
       {
         text: "Developed RESTful APIs and integrated front-end components using Node.js, Express.js and React, automating order processing to improve operational efficiency by 30%.",
@@ -109,10 +109,9 @@ const ExperienceCard = ({ exp, index }: { exp: ExperienceItem; index: number }) 
   };
 
   return (
-    <div className={`relative ml-8 md:ml-0 md:w-[calc(50%-2rem)] ${
-      index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'
-    }`}>
-      <motion.div 
+    <div className={`relative ml-8 md:ml-0 md:w-[calc(50%-2rem)] ${index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'
+      }`}>
+      <motion.div
         className="bg-white dark:bg-gray-800/40 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-700/50 backdrop-blur-sm"
         whileHover={{ y: -5 }}
       >
@@ -197,7 +196,7 @@ const ExperienceSection = () => {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
       {/* Header */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-16"

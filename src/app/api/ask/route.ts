@@ -23,10 +23,10 @@ const SKILLS = {
 
 const EXPERIENCES = [
   {
-    period: "Dec 2024 - Present",
+    period: "January 2024 - Present",
     title: "Full Stack Developer",
-    company: "Sensation Software Solutions, Pvt. Ltd",
-    location: "Mohali, Punjab",
+    company: "Klovertel Private Limited",
+    location: "New Delhi, India",
     projects: [
       "Trace Venue - Cross-platform desktop application using Electron.js for venue and accommodation management with offline-first architecture",
       "LeadNest CRM - Full-featured CRM platform with dynamic form builder, rule-based automation, real-time notifications using SignalR, and multi-stage lead pipeline management",
@@ -37,10 +37,10 @@ const EXPERIENCES = [
     ]
   },
   {
-    period: "July 2024 - Dec 2024",
+    period: "July 2023 - January 2024",
     title: "Full Stack Developer",
-    company: "Sensation Software Solutions, Pvt. Ltd",
-    location: "Mohali, Punjab",
+    company: "Klovertel Private Limited",
+    location: "New Delhi, India",
     projects: [
       "AppyPay (Digital Payment Platform) - Designed responsive merchant dashboard using Material-UI, implemented dynamic theming system reducing code redundancy by 40%",
       "Merchant registration system with Redux Toolkit for payment method integration, bank account validation, and KYC verification - reduced onboarding time by 35%",
@@ -48,10 +48,10 @@ const EXPERIENCES = [
     ]
   },
   {
-    period: "Jan 2024 - June 2024",
+    period: "Jan 2023 - June 2023",
     title: "Software Developer Intern",
-    company: "Sensation Software Solutions, Pvt. Ltd",
-    location: "Mohali, Punjab",
+    company: "Klovertel Private Limited",
+    location: "New Delhi, India",
     projects: [
       "Developed RESTful APIs using Node.js, Express.js and React, improving operational efficiency by 30%",
       "Enhanced search functionality with debouncing techniques reducing API calls by 60%",
@@ -208,7 +208,7 @@ function findResponse(message: string): ResponseWithSuggestions {
   // Who are you / Introduction
   if (/who (are you|is aman)|about yourself|introduce|tell me about you/i.test(lowerMessage)) {
     return {
-      text: `I'm **${PROFILE.name}**, a ${PROFILE.title} based in ${PROFILE.location}. I specialize in building scalable web applications, microservices architecture, and cross-platform mobile development.\n\n🎓 **Education:** ${PROFILE.education}\n\nCurrently working at **Sensation Software Solutions** where I've built enterprise applications like LeadNest CRM, Trace Venue, and AppyPay.\n\n📧 Email: ${PROFILE.email}\n🔗 [GitHub](${PROFILE.github}) | [LinkedIn](${PROFILE.linkedin})`,
+      text: `I'm **${PROFILE.name}**, a ${PROFILE.title} based in ${PROFILE.location}. I specialize in building scalable web applications, microservices architecture, and cross-platform mobile development.\n\n🎓 **Education:** ${PROFILE.education}\n\nCurrently working at **Klovertel Private Limited** where I've built enterprise applications like LeadNest CRM, Trace Venue, and AppyPay.\n\n📧 Email: ${PROFILE.email}\n🔗 [GitHub](${PROFILE.github}) | [LinkedIn](${PROFILE.linkedin})`,
       suggestions: SUGGESTED_QUESTIONS.about
     };
   }
@@ -222,7 +222,7 @@ function findResponse(message: string): ResponseWithSuggestions {
   }
 
   // Experience
-  if (/experience|work|job|career|company|sensation|appypay|leadnest|trace venue|supra/i.test(lowerMessage)) {
+  if (/experience|work|job|career|company|klovertel|appypay|leadnest|trace venue|supra/i.test(lowerMessage)) {
     let response = `💼 **My Professional Experience:**\n\n`;
     EXPERIENCES.forEach(exp => {
       response += `### ${exp.title} at ${exp.company}\n`;
@@ -325,7 +325,7 @@ function findResponse(message: string): ResponseWithSuggestions {
 
   // Default response
   return {
-    text: `Thanks for your question! I'm **Aman Anurag**, a Full Stack Developer.\n\nI can tell you about:\n- 💼 **Experience** - My work at Sensation Software Solutions\n- 🛠️ **Skills** - React, Node.js, TypeScript, Docker, and more\n- 🚀 **Projects** - LMS, Cloud IDE, AlgoCode, and more\n- 📬 **Contact** - How to reach me\n\nWhat would you like to know more about?`,
+    text: `Thanks for your question! I'm **Aman Anurag**, a Full Stack Developer.\n\nI can tell you about:\n- 💼 **Experience** - My work at Klovertel Private Limited\n- 🛠️ **Skills** - React, Node.js, TypeScript, Docker, and more\n- 🚀 **Projects** - LMS, Cloud IDE, AlgoCode, and more\n- 📬 **Contact** - How to reach me\n\nWhat would you like to know more about?`,
     suggestions: SUGGESTED_QUESTIONS.default
   };
 }
