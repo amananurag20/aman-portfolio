@@ -24,7 +24,7 @@ const ResumeSection = () => {
 
                 <div className="flex flex-wrap justify-center gap-4">
                     <motion.a
-                        href="/assests/Aman_Resume.pdf"
+                        href="/assests/Aman_Resume(cv).pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group relative inline-flex items-center justify-center px-6 py-2 bg-transparent border-2 border-current overflow-hidden font-medium rounded-lg hover:scale-105 transition-all duration-300"
@@ -38,8 +38,8 @@ const ResumeSection = () => {
                     </motion.a>
 
                     <motion.a
-                        href="/assests/Aman_Resume.pdf"
-                        download="Aman_Resume.pdf"
+                        href="/assests/Aman_Resume(cv).pdf"
+                        download="Aman_Resume(cv).pdf"
                         className="group relative inline-flex items-center justify-center px-6 py-2 bg-transparent border-2 border-current overflow-hidden font-medium rounded-lg hover:scale-105 transition-all duration-300"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
