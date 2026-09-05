@@ -28,6 +28,7 @@ const EXPERIENCES = [
     company: "Skyclad Ventures",
     location: "Dubai, UAE (Remote)",
     projects: [
+      "Architected and built AgentCore, a multi-tenant AI CRM and customer-engagement suite with RAG knowledge, embeddable chat, lead scoring and routing, WhatsApp automation, voice agents, appointments, proposals, human handoff, and live operational dashboards",
       "Leading end-to-end development of Payment Center across 20+ payment and configuration workflows",
       "Built 30+ reusable React and TypeScript components, reducing repeated frontend effort by about 35%",
       "Designed and integrated 25+ APIs for payments, authentication, RBAC, payer data, audits, and operations",
@@ -201,7 +202,7 @@ function findResponse(message: string): ResponseWithSuggestions {
   // Who are you / Introduction
   if (/who (are you|is aman)|about yourself|introduce|tell me about you/i.test(lowerMessage)) {
     return {
-      text: `I'm **${PROFILE.name}**, a ${PROFILE.title} based in ${PROFILE.location}. I build scalable product and platform experiences across web, mobile, desktop, real-time systems, and applied AI.\n\n🎓 **Education:** ${PROFILE.education}\n\nI currently lead end-to-end Payment Center delivery at **Skyclad Ventures**, covering frontend architecture, backend integrations, API contracts, RBAC, audit flows, and releases. Previously, I spent three years at **Klovertel Private Limited** building CRM, hospitality, fleet, analytics, mobile, and desktop products.\n\n📧 Email: ${PROFILE.email}\n🔗 [GitHub](${PROFILE.github}) | [LinkedIn](${PROFILE.linkedin})`,
+      text: `I'm **${PROFILE.name}**, a ${PROFILE.title} based in ${PROFILE.location}. I build scalable product and platform experiences across web, mobile, desktop, real-time systems, and applied AI.\n\n🎓 **Education:** ${PROFILE.education}\n\nAt **Skyclad Ventures**, I architected **AgentCore**, a multi-tenant AI CRM and customer-engagement suite spanning RAG knowledge, website chat, WhatsApp, voice agents, leads, appointments, proposals, and human handoff. I also lead end-to-end Payment Center delivery across frontend architecture, backend integrations, API contracts, RBAC, audit flows, and releases. Previously, I spent three years at **Klovertel Private Limited** building CRM, hospitality, fleet, analytics, mobile, and desktop products.\n\n📧 Email: ${PROFILE.email}\n🔗 [GitHub](${PROFILE.github}) | [LinkedIn](${PROFILE.linkedin})`,
       suggestions: SUGGESTED_QUESTIONS.about
     };
   }
@@ -215,13 +216,13 @@ function findResponse(message: string): ResponseWithSuggestions {
   }
 
   // Experience
-  if (/experience|work|job|career|company|skyclad|payment center|klovertel|appypay|leadnest|trace venue|supra/i.test(lowerMessage)) {
+  if (/experience|work|job|career|company|skyclad|agentcore|ai crm|whatsapp|payment center|klovertel|appypay|leadnest|trace venue|supra/i.test(lowerMessage)) {
     let response = `💼 **My Professional Experience:**\n\n`;
     EXPERIENCES.forEach(exp => {
       response += `### ${exp.title} at ${exp.company}\n`;
       response += `📍 ${exp.location} | 📅 ${exp.period}\n\n`;
       response += `**Key Contributions:**\n`;
-      exp.projects.slice(0, 3).forEach(proj => {
+      exp.projects.slice(0, 4).forEach(proj => {
         response += `- ${proj}\n`;
       });
       response += `\n`;

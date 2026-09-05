@@ -27,25 +27,79 @@ const experience = [
     company: "Skyclad Ventures",
     location: "Dubai, UAE · Remote",
     description:
-      "Leading end-to-end delivery for Payment Center—from payer experiences and reusable UI systems to API contracts, RBAC, audit flows, and production releases.",
+      "Owning architecture and end-to-end product delivery across AI-powered customer engagement and fintech platforms—from product decisions and system design to production releases.",
+    work: [
+      {
+        eyebrow: "FLAGSHIP · AI BUSINESS SUITE",
+        title: "AgentCore",
+        featured: true,
+        description:
+          "Architected and built a multi-tenant AI CRM and customer-engagement suite. The platform brings together configurable AI providers, RAG-powered knowledge, embeddable website chat, lead capture and routing, WhatsApp automation, voice agents, appointment booking, proposals, human handoff, and real-time operational dashboards.",
+        tags: ["Next.js", "NestJS", "PostgreSQL", "Prisma", "RAG", "WhatsApp", "Twilio", "Socket.io"],
+      },
+      {
+        eyebrow: "FINTECH · PAYMENTS",
+        title: "Payment Center",
+        featured: false,
+        description:
+          "Led payer-side frontend delivery and backend integration across payment configuration, authentication, payer data, audit, and operational workflows. Defined shared API contracts, validation, error handling, and release flows for dependable cross-team delivery.",
+        tags: ["React", "TypeScript", "Redux Toolkit", "Material UI", "RBAC", "REST APIs"],
+      },
+    ],
     highlights: [
       "20+ payment and configuration workflows",
       "30+ reusable React and TypeScript components",
       "25+ backend APIs designed and integrated",
+      "~35% less repeated frontend effort",
       "~40% fewer frontend–backend integration issues",
     ],
   },
   {
     period: "JAN 2023 — JAN 2026",
-    role: "Full Stack Developer",
+    role: "Full Stack Developer · Promoted from Intern",
     company: "Klovertel Private Limited",
     location: "New Delhi, India",
     description:
       "Promoted from intern and grew into full product ownership across SaaS, CRM, hospitality, fleet, analytics, mobile, and offline-first desktop systems.",
+    work: [
+      {
+        eyebrow: "CRM · AUTOMATION",
+        title: "LeadNest CRM",
+        featured: false,
+        description:
+          "Engineered a lead-management platform with multi-stage pipelines, a drag-and-drop form builder, visual automation rules, advanced filters, RBAC, team hierarchy, audit logs, SignalR notifications, and high-volume table workflows with Excel/PDF export.",
+        tags: ["React", "Vite", "Tailwind CSS", "TanStack Table", "SignalR", "RBAC"],
+      },
+      {
+        eyebrow: "HOSPITALITY · FLEET",
+        title: "Accommodation & Driver Operations",
+        featured: false,
+        description:
+          "Built web and React Native operations systems for real-time bookings, room allocation, payments, live GPS tracking, geospatial route optimization, and automated dispatch—supporting more than 500 daily users.",
+        tags: ["MERN", "React Native", "Socket.io", "MongoDB Geo", "Payments"],
+      },
+      {
+        eyebrow: "DESKTOP · OFFLINE FIRST",
+        title: "Trace Venue",
+        featured: false,
+        description:
+          "Developed a cross-platform Electron venue application with secure IPC, local database synchronization, native integrations, POS thermal printing, and offline-first operation for dependable service without internet connectivity.",
+        tags: ["Electron", "IPC", "Local sync", "POS printing", "Auto-update"],
+      },
+      {
+        eyebrow: "FINTECH · ANALYTICS",
+        title: "AppyPay & Supra.tools",
+        featured: false,
+        description:
+          "Delivered merchant onboarding, KYC and payment-method workflows for AppyPay, plus interactive Next.js product analytics for Supra.tools. Built reusable theming and state patterns while simplifying complex operational decisions.",
+        tags: ["Next.js", "Material UI", "Redux Toolkit", "KYC", "Analytics"],
+      },
+    ],
     highlights: [
       "Systems serving 500+ daily users",
       "50,000+ secure API requests handled daily",
       "10,000+ CRM records with export and fuzzy search",
+      "40% faster fleet response and analytics",
       "99.9% uptime across real-time integrations",
     ],
   },
@@ -284,6 +338,22 @@ export default function Home() {
                 <p className="timeline-company">{job.company}</p>
                 <h3>{job.role}</h3>
                 <p className="timeline-description">{job.description}</p>
+                <div className="experience-work-grid">
+                  {job.work.map((work) => (
+                    <article className={`experience-work-card${work.featured ? " is-featured" : ""}`} key={work.title}>
+                      <div className="experience-work-topline">
+                        <span>{work.eyebrow}</span>
+                        {work.featured && <strong>NEW</strong>}
+                      </div>
+                      <h4>{work.title}</h4>
+                      <p>{work.description}</p>
+                      <div className="experience-stack">
+                        {work.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                      </div>
+                    </article>
+                  ))}
+                </div>
+                <p className="impact-label">MEASURED OUTCOMES</p>
                 <div className="highlight-list">
                   {job.highlights.map((highlight) => <span key={highlight}>{highlight}</span>)}
                 </div>
