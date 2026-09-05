@@ -1,0 +1,94 @@
+.surface {
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+  --light-x: 50%;
+  --light-y: 35%;
+  position: relative;
+  perspective: 1200px;
+}
+
+.card {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border: 1px solid rgba(229, 9, 20, 0.62);
+  border-radius: 22px;
+  background: #101012;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y));
+  transition: transform 550ms cubic-bezier(.2,.75,.2,1), box-shadow 450ms ease;
+  box-shadow: 0 45px 100px rgba(0, 0, 0, 0.72), 0 0 70px rgba(229, 9, 20, 0.12);
+}
+
+/* Clip the photo on its own layer; clipping the card would flatten its children. */
+.imageLayer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 21px;
+  transform: translateZ(1px);
+}
+
+.light {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(ellipse at var(--light-x) var(--light-y),
+    rgba(255, 240, 240, 0.17), rgba(255, 35, 56, 0.09) 28%, transparent 65%);
+  transform: translateZ(2px);
+  transition: opacity 350ms ease;
+}
+
+.badge {
+  transform: translateZ(38px);
+}
+
+.credit {
+  transform: translateZ(48px);
+  text-shadow: 0 2px 14px #000;
+}
+
+.edge {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+  transform: translateZ(4px);
+}
+
+.specs {
+  transform: none;
+}
+
+/* No ambient loop: the portrait only moves in response to a precise pointer. */
+.halo {
+  animation: none;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .surface[data-active="true"] .card {
+    transition-duration: 140ms, 450ms;
+    box-shadow: 0 55px 110px rgba(0, 0, 0, 0.78), 0 0 90px rgba(229, 9, 20, 0.23);
+  }
+
+  .surface[data-active="true"] .light {
+    opacity: 1;
+  }
+}
+
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .card {
+    transform: none;
+    transition: none;
+  }
+
+  .badge, .credit, .imageLayer, .edge {
+    transform: none;
+  }
+
+  .light {
+    display: none;
+  }
+}

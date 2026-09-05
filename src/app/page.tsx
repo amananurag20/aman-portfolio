@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
+import InteractivePortrait from "@/components/InteractivePortrait";
 import {
   ArrowDown,
   ArrowUpRight,
@@ -324,35 +325,7 @@ export default function Home() {
           </div>
         </div>
 
-        <aside className="hero-portrait-stage reveal-up delay-three" aria-label="Featured portrait of Aman Anurag">
-          <div className="portrait-halo" />
-          <div className="hero-portrait-card">
-            <Image
-              src="/assests/aman-hero-portrait-v3.png"
-              alt="Aman Anurag, Senior Full Stack Engineer"
-              fill
-              priority
-              unoptimized
-              sizes="(max-width: 980px) 80vw, 34vw"
-              className="hero-portrait-image"
-            />
-            <div className="portrait-vignette" />
-            <div className="portrait-scanline" />
-            <span className="featured-badge">FEATURED ENGINEER</span>
-            <div className="portrait-credit">
-              <div>
-                <span>AMAN ANURAG</span>
-                <small>SENIOR FULL STACK DEVELOPER</small>
-              </div>
-              <strong>AA</strong>
-            </div>
-          </div>
-          <div className="portrait-specs">
-            <span><strong>4+</strong> YEARS</span>
-            <span><strong>25+</strong> APIs</span>
-            <span><strong>99.9%</strong> UPTIME</span>
-          </div>
-        </aside>
+        <InteractivePortrait />
 
         <div className="hero-footer">
           <span>SCROLL TO EXPLORE</span>
