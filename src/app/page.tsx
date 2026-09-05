@@ -325,6 +325,9 @@ export default function Home() {
               <Download size={16} /> Résumé
             </a>
             <QuickOverview />
+            <a className="button button-secondary" href="/play">
+              <Play size={16} /> Play my portfolio
+            </a>
           </div>
         </div>
 
