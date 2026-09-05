@@ -6,6 +6,7 @@ import {
   Award,
   BrainCircuit,
   BriefcaseBusiness,
+  ChevronRight,
   CloudCog,
   Code2,
   Database,
@@ -218,6 +219,41 @@ const aiExpertise = [
   },
 ];
 
+const agentCoreCapabilities = [
+  {
+    number: "01",
+    title: "Grounded AI support",
+    description:
+      "Organization-approved knowledge moves through extraction, OCR, classification, chunking, embeddings, tenant-scoped retrieval, citations, and evaluation before it reaches customers.",
+  },
+  {
+    number: "02",
+    title: "Omnichannel engagement",
+    description:
+      "Website chat, WhatsApp, and voice interactions share one operational layer with conversation memory, confidence fallbacks, real-time inbox events, and human handoff.",
+  },
+  {
+    number: "03",
+    title: "CRM & revenue operations",
+    description:
+      "Lead capture, deduplication, scoring, routing, configurable pipelines, follow-ups, appointments, proposals, itineraries, and customer outcomes form one connected workflow.",
+  },
+  {
+    number: "04",
+    title: "Enterprise controls",
+    description:
+      "Multi-tenant isolation, product entitlements, granular RBAC, audit history, provider health, usage visibility, and human approval keep AI operations secure and accountable.",
+  },
+];
+
+const agentCoreFlow = [
+  "Web · WhatsApp · Voice",
+  "Agent orchestration",
+  "RAG knowledge",
+  "CRM · Booking · Proposals",
+  "Human ops · Analytics",
+];
+
 const stats = [
   ["4+", "Years building"],
   ["25+", "APIs delivered"],
@@ -270,9 +306,14 @@ export default function Home() {
             <span>that scale.</span>
           </h1>
           <p className="hero-summary reveal-up delay-three">
-            I&apos;m Aman Anurag. I turn complex product ideas into reliable web, mobile, desktop,
-            and AI-powered experiences—from architecture to production.
+            I&apos;m Aman Anurag—a Senior Full Stack Engineer building AI-powered SaaS, CRM,
+            and real-time platforms from architecture to production.
           </p>
+          <div className="hero-proof-row reveal-up delay-three" aria-label="Core strengths">
+            <span>Product architecture</span>
+            <span>End-to-end delivery</span>
+            <span>Production ownership</span>
+          </div>
           <div className="hero-actions reveal-up delay-four">
             <a className="button button-primary" href="#projects">
               <Play size={16} fill="currentColor" /> View selected work
@@ -381,6 +422,21 @@ export default function Home() {
                       <div className="experience-stack">
                         {work.tags.map((tag) => <span key={tag}>{tag}</span>)}
                       </div>
+                      {work.featured && (
+                        <div className="experience-case-actions">
+                          <a className="experience-case-link" href="#agentcore">
+                            Explore case study <ChevronRight size={14} />
+                          </a>
+                          <a
+                            className="experience-case-link"
+                            href="https://dev-app.keogramlabs.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Live product <ArrowUpRight size={14} />
+                          </a>
+                        </div>
+                      )}
                     </article>
                   ))}
                 </div>
@@ -391,6 +447,106 @@ export default function Home() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="content-section agentcore-section" id="agentcore">
+        <div className="agentcore-hero">
+          <div className="agentcore-intro">
+            <SectionLabel episode="CASE STUDY">SKYCLAD VENTURES · 2026</SectionLabel>
+            <p className="agentcore-overline">ARCHITECTED &amp; BUILT END-TO-END</p>
+            <h2>AgentCore<span>.</span></h2>
+            <p className="agentcore-lead">
+              A multi-tenant AI business suite that unifies customer conversations,
+              trusted knowledge, lead operations, appointments, and sales workflows.
+            </p>
+            <div className="agentcore-actions">
+              <a
+                className="button button-primary"
+                href="https://dev-app.keogramlabs.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View live product <ArrowUpRight size={16} />
+              </a>
+              <span>DEV DEPLOYMENT · AUTHENTICATION REQUIRED</span>
+            </div>
+          </div>
+          <aside className="ownership-card" aria-label="Aman's ownership on AgentCore">
+            <span className="ownership-label">MY OWNERSHIP</span>
+            <ul>
+              <li><strong>01</strong> Product and system architecture</li>
+              <li><strong>02</strong> Frontend and backend engineering</li>
+              <li><strong>03</strong> AI, RAG, and channel integrations</li>
+              <li><strong>04</strong> DevOps and production delivery</li>
+            </ul>
+          </aside>
+        </div>
+
+        <div className="agentcore-value-strip">
+          <div><strong>1</strong><span>Unified business suite</span></div>
+          <div><strong>3</strong><span>Customer channels</span></div>
+          <div><strong>RAG</strong><span>Grounded knowledge</span></div>
+          <div><strong>HITL</strong><span>Human-in-the-loop</span></div>
+        </div>
+
+        <figure className="agentcore-dashboard-showcase">
+          <div className="dashboard-browser-bar">
+            <div><span /><span /><span /></div>
+            <p>AGENTCORE / LIVE OPERATIONS DASHBOARD</p>
+            <strong>PRODUCTION UI</strong>
+          </div>
+          <div className="dashboard-image-wrap">
+            <Image
+              src="/assests/agentcore-dashboard.png"
+              alt="AgentCore operations dashboard showing live conversations, channel workload, bookings, and human handoffs"
+              fill
+              sizes="(max-width: 900px) 100vw, 1320px"
+              className="agentcore-dashboard-image"
+            />
+          </div>
+          <figcaption>
+            A unified operational view across customer chat, WhatsApp, voice, appointments,
+            lead activity, AI usage, service health, and human-attention queues.
+          </figcaption>
+        </figure>
+
+        <div className="architecture-block">
+          <div className="architecture-copy">
+            <span className="project-eyebrow">SYSTEM ARCHITECTURE</span>
+            <h3>One connected operating flow.</h3>
+            <p>
+              Each layer is designed as part of the product—not as an isolated AI demo—so customer intent
+              becomes grounded assistance, structured CRM data, and an actionable human workflow.
+            </p>
+          </div>
+          <div className="architecture-flow" aria-label="AgentCore architecture flow">
+            {agentCoreFlow.map((step, index) => (
+              <div className="architecture-step" key={step}>
+                <span>0{index + 1}</span>
+                <strong>{step}</strong>
+                {index < agentCoreFlow.length - 1 && <ChevronRight size={17} />}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="agentcore-capability-grid">
+          {agentCoreCapabilities.map((capability) => (
+            <article key={capability.title}>
+              <span>{capability.number}</span>
+              <h3>{capability.title}</h3>
+              <p>{capability.description}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="case-study-proof">
+          <span>PRODUCTION ENGINEERING, NOT A PROTOTYPE</span>
+          <p>
+            Designed across Next.js, NestJS, PostgreSQL, Prisma, Redis/BullMQ, Socket.io,
+            Twilio, configurable AI providers, and vector retrieval—with security and observability built in.
+          </p>
         </div>
       </section>
 
@@ -503,7 +659,15 @@ export default function Home() {
         <div className="contact-glow" />
         <SectionLabel episode="05">START A CONVERSATION</SectionLabel>
         <h2>Have a hard problem?<br /><span>Let&apos;s build the answer.</span></h2>
-        <p>I&apos;m always interested in ambitious products, high-ownership roles, and engineering conversations.</p>
+        <p>
+          Open to Senior Full Stack, Product Engineer, and Applied AI Engineer opportunities
+          where I can own ambitious systems from architecture through production.
+        </p>
+        <div className="target-role-row" aria-label="Target roles">
+          <span>Senior Full Stack</span>
+          <span>Product Engineering</span>
+          <span>Applied AI</span>
+        </div>
         <div className="contact-actions">
           <a className="button button-primary" href="mailto:amananurag.20@gmail.com">
             <Mail size={17} /> Email me
