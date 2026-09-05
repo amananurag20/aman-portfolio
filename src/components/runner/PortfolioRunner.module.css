@@ -65,3 +65,24 @@
 @media (max-width: 620px) { .page { padding: 0 14px; } .nav { min-height: 70px; } .header { padding: 28px 0 24px; } .edition { display: none; } .header .eyebrow { font-size: .6875rem; } .header p:last-child { font-size: .9375rem; } .hud { padding: 15px; gap: 22px; } .hud strong { font-size: 1.25rem; } .hud small { font-size: .625rem; } .hud button { padding: 10px; } .stage canvas { min-height: 320px; } .stage { min-height: 320px; } .overlay { padding: 22px 18px; } .overlay h2 { font-size: 1.9rem; } .overlay p:not(.eyebrow) { font-size: .875rem; margin-bottom: 18px; } .overlay .eyebrow { font-size: .625rem; margin-bottom: 10px; } .overlay small { margin-top: 12px; font-size: .6875rem; } .controls { padding: 12px; gap: 10px; } .controls > div { gap: 6px; } .sidebar { grid-template-columns: 1fr; } .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } .skillCard { padding: 18px; } .skillCard small { font-size: .625rem; } .skillCard h3 { font-size: 1rem; } .skillCard p { font-size: .8125rem; } .collection { padding-top: 42px; } }
 @media (max-width: 350px) { .hud { gap: 14px; } .cards { grid-template-columns: 1fr; } .overlay { padding: 16px; } }
 @media (prefers-reduced-motion: reduce) { .skillCard, .skillCard:hover { transition: none; transform: none; } }
+
+/* Arcade controls and status live outside the canvas for keyboard and touch access. */
+.runStats { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; padding: 12px 24px; border-bottom: 1px solid #453047; background: #0b0b12; color: #bdb1ce; font: 600 .75rem/1.5 monospace; }
+.runStats strong { color: #f0d9ff; }
+.modeChoice { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; max-width: 350px; margin: 0 auto 18px; }
+.modeChoice button { min-height: 58px; padding: 9px 16px; border: 1px solid #5a465d; border-radius: 8px; color: #eee6f6; background: #1e1827; cursor: pointer; font: inherit; font-size: .875rem; }
+.modeChoice button[aria-pressed="true"] { border-color: #fa698c; background: #4b2036; }
+.modeChoice button small { display: block; margin: 4px 0 0; color: #cdbace; font-size: .6875rem; }
+.countdown { display: block; margin: 12px; font: 800 clamp(4rem, 14vw, 8rem)/1 monospace; color: #ff6c91; }
+.awards { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
+.awards span { border: 1px solid #71466e; background: #321e3b; border-radius: 20px; padding: 6px 12px; color: #edcaff; font-size: .75rem; }
+.legend { display: grid; gap: 12px; padding: 20px 24px; border: 1px solid #433248; border-radius: 12px; background: #16101f; }
+.legend span { display: flex; align-items: center; gap: 10px; color: #b6a5c7; font-size: .8125rem; }
+.legend strong { color: #e7d7f4; font-size: .8125rem; margin-right: auto; }
+.controls > div button { min-height: 52px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.controls > div button small { color: #d5b9e2; font: 600 .5625rem/1 monospace; margin-top: 1px; }
+.controls > div { flex-wrap: wrap; }
+.overlay { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
+.overlay > div { flex-shrink: 0; margin-block: auto; }
+@media (min-width: 1101px) { .stage canvas { min-height: 430px; } }
+@media (max-width: 620px) { .stage, .stage canvas { min-height: 405px; } .runStats { padding: 10px 14px; gap: 8px 16px; font-size: .6875rem; } .controls > div button { width: 46px; } .controls span { font-size: .75rem; } .controls small { font-size: .6875rem; } .modeChoice button small { font-size: .625rem; } }
