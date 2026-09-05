@@ -14,7 +14,7 @@ const suggestedQuestions = [
   },
   {
     icon: <Briefcase className="w-4 h-4" />,
-    text: "Tell me about your experience at Klovertel",
+    text: "Tell me about your recent work experience",
     category: "Experience"
   },
   {
@@ -39,7 +39,7 @@ const suggestedQuestions = [
   },
   {
     icon: <MessageSquare className="w-4 h-4" />,
-    text: "Tell me about the DevOverflow project",
+    text: "Tell me about the Virtual Focus Room project",
     category: "Projects"
   },
   {
@@ -414,4 +414,4 @@ export default function AskMe({ isOpen, onClose }: { isOpen: boolean; onClose: (
       )}
     </AnimatePresence>
   );
-} 
+}

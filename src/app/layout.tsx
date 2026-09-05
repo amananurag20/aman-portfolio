@@ -1,18 +1,45 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider"
-import Navbar from "@/components/common/Navbar";
-import Footer from "@/components/footer";
-import { Toaster } from "@/components/ui/toaster";
-import Head from 'next/head';
-
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Aman Anurag",
-  description: "personal portfolio",
+  title: "Aman Anurag — Senior Full Stack Engineer",
+  description:
+    "Senior Full Stack Engineer building scalable web, mobile, desktop, AI, and real-time products.",
+  keywords: [
+    "Aman Anurag",
+    "Senior Full Stack Engineer",
+    "React Developer",
+    "Node.js Developer",
+    "AI Engineer",
+    "Electron Developer",
+  ],
+  authors: [{ name: "Aman Anurag" }],
+  alternates: {
+    canonical: "https://aman-portfolio-sigma-eight.vercel.app/",
+  },
+  openGraph: {
+    title: "Aman Anurag — Senior Full Stack Engineer",
+    description:
+      "Product and platform engineering across web, mobile, desktop, real-time systems, and applied AI.",
+    url: "https://aman-portfolio-sigma-eight.vercel.app/",
+    siteName: "Aman Anurag",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Aman Anurag — Senior Full Stack Engineer",
+    description:
+      "Product and platform engineering across web, mobile, desktop, real-time systems, and applied AI.",
+  },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#050505",
 };
 
 export default function RootLayout({
@@ -21,22 +48,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en"suppressHydrationWarning>
-    
-       <body>
-      
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Toaster />
-             <Navbar />
-            {children}
-            <Footer />
-          </ThemeProvider>
-        </body>
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
