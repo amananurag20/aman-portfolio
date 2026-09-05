@@ -181,8 +181,8 @@ export default function Home() {
           </div>
           <p className="hero-kicker reveal-up delay-one">PRODUCTS. PLATFORMS. INTELLIGENCE.</p>
           <h1 className="hero-title reveal-up delay-two">
-            I engineer systems
-            <span>built to perform.</span>
+            I build products
+            <span>that scale.</span>
           </h1>
           <p className="hero-summary reveal-up delay-three">
             I&apos;m Aman Anurag. I turn complex product ideas into reliable web, mobile, desktop,
