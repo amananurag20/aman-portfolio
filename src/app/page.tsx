@@ -17,7 +17,6 @@ import {
   MapPin,
   MonitorSmartphone,
   Play,
-  Radio,
   ServerCog,
 } from "lucide-react";
 
@@ -199,24 +198,34 @@ export default function Home() {
           </div>
         </div>
 
-        <aside className="hero-console reveal-up delay-three" aria-label="Engineering profile summary">
-          <div className="console-topline">
-            <span>ENGINEERING PROFILE</span>
-            <span className="console-live"><Radio size={12} /> LIVE</span>
+        <aside className="hero-portrait-stage reveal-up delay-three" aria-label="Featured portrait of Aman Anurag">
+          <div className="portrait-halo" />
+          <div className="hero-portrait-card">
+            <Image
+              src="/assests/aman-hero-portrait-v3.png"
+              alt="Aman Anurag, Senior Full Stack Engineer"
+              fill
+              priority
+              unoptimized
+              sizes="(max-width: 980px) 80vw, 34vw"
+              className="hero-portrait-image"
+            />
+            <div className="portrait-vignette" />
+            <div className="portrait-scanline" />
+            <span className="featured-badge">FEATURED ENGINEER</span>
+            <div className="portrait-credit">
+              <div>
+                <span>AMAN ANURAG</span>
+                <small>SENIOR FULL STACK DEVELOPER</small>
+              </div>
+              <strong>AA</strong>
+            </div>
           </div>
-          <div className="console-command">
-            <span className="prompt">$</span>
-            <span>whoami</span>
+          <div className="portrait-specs">
+            <span><strong>4+</strong> YEARS</span>
+            <span><strong>25+</strong> APIs</span>
+            <span><strong>99.9%</strong> UPTIME</span>
           </div>
-          <div className="console-name">AMAN ANURAG</div>
-          <div className="console-role">Senior Full Stack Developer</div>
-          <div className="console-grid">
-            <div><span>FOCUS</span><strong>Product + Platform</strong></div>
-            <div><span>SPECIALTY</span><strong>AI + Real-time</strong></div>
-            <div><span>CURRENT</span><strong>Skyclad Ventures</strong></div>
-            <div><span>STATUS</span><strong className="green-text">Shipping</strong></div>
-          </div>
-          <div className="console-track"><span /></div>
         </aside>
 
         <div className="hero-footer">
