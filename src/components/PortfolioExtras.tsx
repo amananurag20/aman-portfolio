@@ -28,8 +28,14 @@ export function QuickOverview() {
         <dl className={styles.facts}>
           <div><dt>Experience</dt><dd>4+ years building web, mobile, desktop, and AI products.</dd></div>
           <div><dt>Current work</dt><dd>AgentCore: multi-tenant AI CRM and customer engagement at Skyclad Ventures.</dd></div>
-          <div><dt>Core stack</dt><dd>React · Next.js · TypeScript · Node.js · PostgreSQL · Docker</dd></div>
-          <div><dt>Strength</dt><dd>End-to-end ownership across APIs, interfaces, real-time systems, and delivery.</dd></div>
+          <div><dt>Languages &amp; frameworks</dt><dd>JavaScript · TypeScript · Python · React · Next.js · React Native · Node.js · Express · Fastify</dd></div>
+          <div><dt>Frontend</dt><dd>Redux · Zustand · Vite · Tailwind CSS · Material UI · Bootstrap · Radix UI</dd></div>
+          <div><dt>Desktop engineering</dt><dd>Electron.js · IPC communication · Context isolation · Preload scripts · Auto-updater · Native integrations</dd></div>
+          <div><dt>AI / ML &amp; generative AI</dt><dd>Python · RAG pipelines · LangChain · LangGraph · OpenAI API · Prompt engineering · Pinecone · Weaviate · Hugging Face · PyTorch · TensorFlow · CNN · ANN</dd></div>
+          <div><dt>Backend, data &amp; real-time</dt><dd>MongoDB · PostgreSQL · Prisma · Redis · RabbitMQ · REST APIs · WebRTC · Socket.io</dd></div>
+          <div><dt>Cloud &amp; DevOps</dt><dd>AWS (EC2, ECS, S3) · Docker · Jenkins · CI/CD · Code signing · App notarization · Auto-update systems</dd></div>
+          <div><dt>Tools &amp; practices</dt><dd>Git · GitHub · Jira · Agile / Scrum · Linux · Windows / macOS development · Version control</dd></div>
+          <div><dt>Strength</dt><dd>End-to-end ownership across web, React Native mobile apps, Electron desktop apps, APIs, RAG-based AI integrations, real-time systems, DevOps, and production delivery.</dd></div>
         </dl>
         <div className={styles.actions}>
           <a className={styles.primary} href="#agentcore" onClick={close}>Read AgentCore case study</a>
