@@ -6,63 +6,56 @@ import { NextResponse } from 'next/server';
 
 const PROFILE = {
   name: "Aman Anurag",
-  title: "Full Stack Developer",
-  location: "India",
+  title: "Senior Full Stack Engineer",
+  location: "New Delhi, India",
   email: "amananurag.20@gmail.com",
   github: "https://github.com/amananurag20",
   linkedin: "https://www.linkedin.com/in/aman-anurag-a160441b7",
-  education: "B.Tech in Computer Science (CT University, 2020–2024) - CGPA: 8.02"
+  education: "B.Tech in Computer Science Engineering (CT University, 2020–2024) - CGPA: 8.67/10.0, Gold Medalist"
 };
 
 const SKILLS = {
-  frontend: ["React.js", "Next.js 13/14", "TypeScript", "JavaScript (ES6+)", "React Native (Expo)", "TailwindCSS", "Material-UI", "Framer Motion", "Redux Toolkit", "Zustand", "TanStack Table"],
-  backend: ["Node.js", "Express.js", "Fastify", "Hono", "MongoDB", "PostgreSQL", "Redis", "Socket.IO", "SignalR"],
-  devops: ["Docker", "Electron.js", "AWS (EC2, S3)", "Vercel", "GitHub Actions", "Nginx"],
-  ai: ["TensorFlow.js", "MediaPipe", "Gemini API", "OpenAI API"]
+  frontend: ["React.js", "Next.js", "TypeScript", "JavaScript", "React Native", "Tailwind CSS", "Material UI", "Radix UI", "Redux Toolkit", "Zustand"],
+  backend: ["Node.js", "Express.js", "Fastify", "MongoDB", "PostgreSQL", "Prisma", "Redis", "RabbitMQ", "Socket.io", "WebRTC"],
+  devops: ["Docker", "Electron.js", "AWS (EC2, ECS, S3)", "Jenkins", "CI/CD", "Code Signing", "App Notarization"],
+  ai: ["PyTorch", "TensorFlow", "LangChain", "LangGraph", "OpenAI API", "RAG Pipelines", "Pinecone", "Weaviate"]
 };
 
 const EXPERIENCES = [
   {
-    period: "January 2024 - Present",
-    title: "Full Stack Developer",
-    company: "Klovertel Private Limited",
-    location: "New Delhi, India",
+    period: "February 2026 - Present",
+    title: "Senior Full Stack Developer",
+    company: "Skyclad Ventures",
+    location: "Dubai, UAE (Remote)",
     projects: [
-      "Trace Venue - Cross-platform desktop application using Electron.js for venue and accommodation management with offline-first architecture",
-      "LeadNest CRM - Full-featured CRM platform with dynamic form builder, rule-based automation, real-time notifications using SignalR, and multi-stage lead pipeline management",
-      "Drag-and-drop form builder with 15+ field types, multi-step form support, iframe/script embedding",
-      "Visual rule builder for lead automation workflows with condition-based triggers",
-      "Real-time push notifications with SignalR featuring auto-reconnection and token-based authentication",
-      "Role-based access control (RBAC) with granular permissions, team hierarchy management, and audit logging"
+      "Leading end-to-end development of Payment Center across 20+ payment and configuration workflows",
+      "Built 30+ reusable React and TypeScript components, reducing repeated frontend effort by about 35%",
+      "Designed and integrated 25+ APIs for payments, authentication, RBAC, payer data, audits, and operations",
+      "Reduced frontend-backend integration issues by about 40% through shared contracts and validation patterns"
     ]
   },
   {
-    period: "July 2023 - January 2024",
-    title: "Full Stack Developer",
+    period: "January 2023 - January 2026",
+    title: "Full Stack Developer (Promoted from Intern)",
     company: "Klovertel Private Limited",
     location: "New Delhi, India",
     projects: [
-      "AppyPay (Digital Payment Platform) - Designed responsive merchant dashboard using Material-UI, implemented dynamic theming system reducing code redundancy by 40%",
-      "Merchant registration system with Redux Toolkit for payment method integration, bank account validation, and KYC verification - reduced onboarding time by 35%",
-      "Supra.tools - Dynamic product analytics dashboard using Next.js with interactive charts, reduced data analysis time by 40%"
-    ]
-  },
-  {
-    period: "Jan 2023 - June 2023",
-    title: "Software Developer Intern",
-    company: "Klovertel Private Limited",
-    location: "New Delhi, India",
-    projects: [
-      "Developed RESTful APIs using Node.js, Express.js and React, improving operational efficiency by 30%",
-      "Enhanced search functionality with debouncing techniques reducing API calls by 60%",
-      "Implemented real-time updates via Socket.IO and email notifications using Nodemailer",
-      "Optimized image uploads with Cloudinary, resulting in 25% reduction in system response time"
+      "Architected a MERN accommodation system with a React Native app serving 500+ daily users",
+      "Built Trace Venue, an offline-first Electron desktop application with POS thermal printer integration",
+      "Engineered LeadNest CRM for 10,000+ records with pipeline management, RBAC, exports, and fuzzy search",
+      "Delivered real-time integrations spanning Twilio Voice, WhatsApp, Firebase, SignalR, and Socket.io"
     ]
   }
 ];
 
 const PROJECTS = {
   top: [
+    {
+      name: "Virtual Focus Room",
+      description: "Cross-platform virtual co-working product with WebRTC video and audio, screen sharing, collaborative whiteboards, file-enabled chat, tiered permissions, and productivity tools across web, desktop, and mobile",
+      tech: ["React", "Electron.js", "React Native", "WebRTC", "Socket.io"],
+      github: "https://github.com/amananurag20/Virtual-focus-room"
+    },
     {
       name: "Course Management System (LMS)",
       description: "Comprehensive Learning Management System with Code Playground using Monaco Editor with Docker-based sandboxed execution, Ed-Reels for TikTok-style educational videos, interactive quizzes, and markdown note-taking with PDF export",
@@ -200,7 +193,7 @@ function findResponse(message: string): ResponseWithSuggestions {
   // Greetings
   if (/^(hi|hello|hey|hola|namaste|greetings)/i.test(lowerMessage)) {
     return {
-      text: `👋 Hello! I'm **Aman Anurag**, a Full Stack Developer specializing in scalable web applications, microservices architecture, and cross-platform development.\n\nFeel free to ask me about:\n- 💼 My work experience\n- 🛠️ Technical skills\n- 🚀 Projects I've built\n- 📬 How to contact me\n\nWhat would you like to know?`,
+      text: `👋 Hello! I'm **Aman Anurag**, a Senior Full Stack Engineer with 4+ years of experience building scalable web, mobile, desktop, real-time, and AI-powered products.\n\nFeel free to ask me about:\n- 💼 My work experience\n- 🛠️ Technical skills\n- 🚀 Projects I've built\n- 📬 How to contact me\n\nWhat would you like to know?`,
       suggestions: SUGGESTED_QUESTIONS.greeting
     };
   }
@@ -208,7 +201,7 @@ function findResponse(message: string): ResponseWithSuggestions {
   // Who are you / Introduction
   if (/who (are you|is aman)|about yourself|introduce|tell me about you/i.test(lowerMessage)) {
     return {
-      text: `I'm **${PROFILE.name}**, a ${PROFILE.title} based in ${PROFILE.location}. I specialize in building scalable web applications, microservices architecture, and cross-platform mobile development.\n\n🎓 **Education:** ${PROFILE.education}\n\nCurrently working at **Klovertel Private Limited** where I've built enterprise applications like LeadNest CRM, Trace Venue, and AppyPay.\n\n📧 Email: ${PROFILE.email}\n🔗 [GitHub](${PROFILE.github}) | [LinkedIn](${PROFILE.linkedin})`,
+      text: `I'm **${PROFILE.name}**, a ${PROFILE.title} based in ${PROFILE.location}. I build scalable product and platform experiences across web, mobile, desktop, real-time systems, and applied AI.\n\n🎓 **Education:** ${PROFILE.education}\n\nI currently lead end-to-end Payment Center delivery at **Skyclad Ventures**, covering frontend architecture, backend integrations, API contracts, RBAC, audit flows, and releases. Previously, I spent three years at **Klovertel Private Limited** building CRM, hospitality, fleet, analytics, mobile, and desktop products.\n\n📧 Email: ${PROFILE.email}\n🔗 [GitHub](${PROFILE.github}) | [LinkedIn](${PROFILE.linkedin})`,
       suggestions: SUGGESTED_QUESTIONS.about
     };
   }
@@ -222,7 +215,7 @@ function findResponse(message: string): ResponseWithSuggestions {
   }
 
   // Experience
-  if (/experience|work|job|career|company|klovertel|appypay|leadnest|trace venue|supra/i.test(lowerMessage)) {
+  if (/experience|work|job|career|company|skyclad|payment center|klovertel|appypay|leadnest|trace venue|supra/i.test(lowerMessage)) {
     let response = `💼 **My Professional Experience:**\n\n`;
     EXPERIENCES.forEach(exp => {
       response += `### ${exp.title} at ${exp.company}\n`;
@@ -286,7 +279,7 @@ function findResponse(message: string): ResponseWithSuggestions {
   // Education
   if (/education|degree|college|university|study|qualification/i.test(lowerMessage)) {
     return {
-      text: `🎓 **Education:**\n\n**B.Tech in Computer Science**\nCT University (2020–2024)\n📊 CGPA: 8.02`,
+      text: `🎓 **Education:**\n\n**B.Tech in Computer Science Engineering**\nCT University (2020–2024)\n📊 CGPA: 8.67/10.0\n🏅 Gold Medalist for the highest CGPA in the School of Engineering & Technology`,
       suggestions: SUGGESTED_QUESTIONS.education
     };
   }
@@ -294,7 +287,7 @@ function findResponse(message: string): ResponseWithSuggestions {
   // React/Frontend specific
   if (/react|next\.?js|frontend|ui|component/i.test(lowerMessage)) {
     return {
-      text: `⚛️ **Frontend Expertise:**\n\nI have extensive experience with **React.js** and **Next.js 13/14**, including:\n\n- Building dynamic dashboards with TanStack Table and interactive charts\n- State management with Redux Toolkit and Zustand\n- UI libraries: Material-UI, TailwindCSS, Framer Motion\n- Cross-platform mobile apps with React Native & Expo\n\n**Recent Work:** LeadNest CRM features a drag-and-drop form builder with 15+ field types and real-time notifications using SignalR.`,
+      text: `⚛️ **Frontend Expertise:**\n\nI have extensive experience with **React.js**, **Next.js**, and **TypeScript**, including:\n\n- Building reusable product systems with Redux Toolkit and Zustand\n- UI libraries including Material UI, Tailwind CSS, and Radix UI\n- Data-heavy dashboards, complex workflows, and real-time interfaces\n- Cross-platform mobile applications with React Native\n\n**Recent Work:** Built 30+ reusable React and TypeScript components for Payment Center, reducing repeated frontend effort by about 35%.`,
       suggestions: SUGGESTED_QUESTIONS.frontend
     };
   }
@@ -302,7 +295,7 @@ function findResponse(message: string): ResponseWithSuggestions {
   // Backend specific
   if (/node|express|backend|api|database|mongodb|postgres/i.test(lowerMessage)) {
     return {
-      text: `🔧 **Backend Expertise:**\n\nI specialize in building scalable backend systems:\n\n- **Node.js** with Express.js, Fastify, and Hono\n- **Databases:** MongoDB, PostgreSQL, Redis for caching & queues\n- **Real-time:** Socket.IO, SignalR for live updates\n- **Auth:** JWT, NextAuth.js, Clerk, OAuth 2.0\n\n**Recent Work:** Built RESTful APIs for LeadNest CRM and AppyPay, handling complex workflows like KYC verification and multi-stage lead pipelines.`,
+      text: `🔧 **Backend Expertise:**\n\nI specialize in building scalable backend systems:\n\n- **Node.js** with Express.js and Fastify\n- **Databases:** MongoDB, PostgreSQL, Prisma, and Redis\n- **Real-time:** WebRTC, Socket.io, SignalR, and RabbitMQ\n- **Security:** JWT authentication, RBAC, validation, audit trails, and secure APIs\n\n**Recent Work:** Designed and integrated 25+ APIs for payments, authentication, RBAC, payer data management, audit flows, and operational settings.`,
       suggestions: SUGGESTED_QUESTIONS.backend
     };
   }
@@ -310,7 +303,7 @@ function findResponse(message: string): ResponseWithSuggestions {
   // Docker/DevOps
   if (/docker|devops|deploy|kubernetes|aws|cloud/i.test(lowerMessage)) {
     return {
-      text: `☁️ **DevOps & Infrastructure:**\n\nI have hands-on experience with:\n\n- **Containerization:** Docker, Docker Compose, Dockerode\n- **Desktop Apps:** Electron.js for cross-platform applications\n- **Cloud:** AWS (EC2, S3), Vercel, Render\n- **CI/CD:** GitHub Actions\n\n**Recent Work:** Built Trace Venue - a cross-platform desktop app using Electron.js with offline-first architecture and local database synchronization.`,
+      text: `☁️ **DevOps & Infrastructure:**\n\nI have hands-on experience with:\n\n- **Containerization:** Docker, Docker Compose, and Dockerode\n- **Cloud:** AWS EC2, ECS/Fargate, ECR, S3, IAM, and CloudWatch\n- **Delivery:** Jenkins and CI/CD pipelines\n- **Desktop releases:** code signing, notarization, and auto-update systems\n\nI have deployed containerized Node.js services on ECS and built production Electron applications with offline-first synchronization.`,
       suggestions: SUGGESTED_QUESTIONS.devops
     };
   }
@@ -318,14 +311,14 @@ function findResponse(message: string): ResponseWithSuggestions {
   // Hire / Available
   if (/hire|available|opportunity|job|position|work with|freelance/i.test(lowerMessage)) {
     return {
-      text: `🎯 **Yes, I'm open to opportunities!**\n\nI'm currently working as a Full Stack Developer but always interested in discussing:\n\n- 💼 Full-time positions\n- 🤝 Freelance projects\n- 🚀 Exciting tech challenges\n\n**Best way to reach me:**\n📧 ${PROFILE.email}\n💼 [LinkedIn](${PROFILE.linkedin})\n\nLet's connect and discuss how I can contribute to your team!`,
+      text: `🎯 I'm currently a **Senior Full Stack Developer at Skyclad Ventures** and always interested in ambitious products, high-ownership engineering roles, and challenging technical conversations.\n\n**Best way to reach me:**\n📧 ${PROFILE.email}\n💼 [LinkedIn](${PROFILE.linkedin})\n\nLet's connect and discuss how I can contribute to your team.`,
       suggestions: SUGGESTED_QUESTIONS.hire
     };
   }
 
   // Default response
   return {
-    text: `Thanks for your question! I'm **Aman Anurag**, a Full Stack Developer.\n\nI can tell you about:\n- 💼 **Experience** - My work at Klovertel Private Limited\n- 🛠️ **Skills** - React, Node.js, TypeScript, Docker, and more\n- 🚀 **Projects** - LMS, Cloud IDE, AlgoCode, and more\n- 📬 **Contact** - How to reach me\n\nWhat would you like to know more about?`,
+    text: `Thanks for your question! I'm **Aman Anurag**, a Senior Full Stack Engineer.\n\nI can tell you about:\n- 💼 **Experience** - My work at Skyclad Ventures and Klovertel\n- 🛠️ **Skills** - React, Node.js, TypeScript, AI, Docker, AWS, and more\n- 🚀 **Projects** - Virtual Focus Room, LMS, Cloud IDE, and AlgoCode\n- 📬 **Contact** - How to reach me\n\nWhat would you like to know more about?`,
     suggestions: SUGGESTED_QUESTIONS.default
   };
 }
