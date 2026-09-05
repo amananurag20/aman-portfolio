@@ -173,7 +173,7 @@ const capabilities = [
   {
     icon: BrainCircuit,
     title: "Applied AI",
-    items: "RAG pipelines, LangChain, LangGraph, OpenAI API, Pinecone, Weaviate, Hugging Face",
+    items: "AI agents, RAG pipelines, embeddings, vector search, prompt engineering, model integration",
   },
   {
     icon: MonitorSmartphone,
@@ -184,6 +184,37 @@ const capabilities = [
     icon: CloudCog,
     title: "Cloud delivery",
     items: "AWS EC2, ECS, S3, Docker, Jenkins, CI/CD, code signing, app notarization",
+  },
+];
+
+const aiExpertise = [
+  {
+    number: "01",
+    title: "Generative AI & agents",
+    description:
+      "Building structured AI workflows with OpenAI APIs, LangChain, and LangGraph—including tool use, conversation memory, provider abstraction, prompt design, and reliable fallback paths.",
+    tools: ["OpenAI API", "LangChain", "LangGraph", "Prompt engineering"],
+  },
+  {
+    number: "02",
+    title: "RAG & knowledge systems",
+    description:
+      "Designing ingestion-to-answer pipelines with document extraction, OCR, classification, chunking, embeddings, tenant-scoped retrieval, grounded responses, citations, and evaluation workflows.",
+    tools: ["RAG", "Embeddings", "Pinecone", "Weaviate", "Vector search", "OCR"],
+  },
+  {
+    number: "03",
+    title: "ML foundations",
+    description:
+      "Hands-on foundations in neural networks and deep learning using Python, PyTorch, and TensorFlow, including ANN and CNN architectures and model experimentation with Hugging Face tooling.",
+    tools: ["Python", "PyTorch", "TensorFlow", "ANN", "CNN", "Hugging Face"],
+  },
+  {
+    number: "04",
+    title: "Production AI operations",
+    description:
+      "Shipping AI inside multi-tenant products with usage and cost visibility, confidence handling, human handoff, knowledge quarantine, access controls, auditability, and real-time monitoring.",
+    tools: ["Multi-tenancy", "RBAC", "Human handoff", "Evaluation", "Observability"],
   },
 ];
 
@@ -215,8 +246,8 @@ export default function Home() {
         <div className="nav-links">
           <a href="#about">About</a>
           <a href="#experience">Experience</a>
+          <a href="#stack">Skills</a>
           <a href="#projects">Work</a>
-          <a href="#stack">Stack</a>
         </div>
         <a className="nav-cta" href="#contact">
           Let&apos;s talk <ArrowUpRight size={15} />
@@ -363,10 +394,53 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="content-section stack-section" id="stack">
+        <div className="section-heading stack-heading">
+          <SectionLabel episode="03">SKILLS &amp; EXPERTISE</SectionLabel>
+          <h2>Technical depth.<br /><span>Across every layer.</span></h2>
+        </div>
+        <div className="capabilities-grid">
+          {capabilities.map(({ icon: Icon, title, items }, index) => (
+            <article className="capability-card" key={title}>
+              <div className="capability-top">
+                <Icon size={25} strokeWidth={1.5} />
+                <span>0{index + 1}</span>
+              </div>
+              <h3>{title}</h3>
+              <p>{items}</p>
+            </article>
+          ))}
+        </div>
+        <div className="ai-depth-panel">
+          <div className="ai-depth-heading">
+            <div>
+              <span className="project-eyebrow">APPLIED AI / PRODUCTION SYSTEMS</span>
+              <h3>From model capability<br />to reliable product.</h3>
+            </div>
+            <p>
+              My AI work goes beyond calling a model API. I build the knowledge pipelines,
+              agent workflows, product interfaces, controls, and operational feedback loops around it.
+            </p>
+          </div>
+          <div className="ai-depth-grid">
+            {aiExpertise.map((area) => (
+              <article className="ai-depth-card" key={area.title}>
+                <span className="ai-depth-number">{area.number}</span>
+                <h4>{area.title}</h4>
+                <p>{area.description}</p>
+                <div className="stack-row">
+                  {area.tools.map((tool) => <span key={tool}>{tool}</span>)}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="content-section projects-section" id="projects">
         <div className="section-heading projects-heading">
           <div>
-            <SectionLabel episode="03">SELECTED SYSTEMS</SectionLabel>
+            <SectionLabel episode="04">SELECTED SYSTEMS</SectionLabel>
             <h2>Built beyond<br /><span>the browser.</span></h2>
           </div>
           <p>Four products that show how I think about architecture, interaction, and scale.</p>
@@ -403,25 +477,6 @@ export default function Home() {
         <a className="text-link" href="https://github.com/amananurag20" target="_blank" rel="noreferrer">
           Explore all repositories <ArrowUpRight size={16} />
         </a>
-      </section>
-
-      <section className="content-section stack-section" id="stack">
-        <div className="section-heading stack-heading">
-          <SectionLabel episode="04">TECHNICAL DEPTH</SectionLabel>
-          <h2>One engineer.<br /><span>Every layer.</span></h2>
-        </div>
-        <div className="capabilities-grid">
-          {capabilities.map(({ icon: Icon, title, items }, index) => (
-            <article className="capability-card" key={title}>
-              <div className="capability-top">
-                <Icon size={25} strokeWidth={1.5} />
-                <span>0{index + 1}</span>
-              </div>
-              <h3>{title}</h3>
-              <p>{items}</p>
-            </article>
-          ))}
-        </div>
       </section>
 
       <section className="content-section proof-section">

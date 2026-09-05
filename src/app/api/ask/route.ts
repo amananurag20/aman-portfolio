@@ -18,7 +18,7 @@ const SKILLS = {
   frontend: ["React.js", "Next.js", "TypeScript", "JavaScript", "React Native", "Tailwind CSS", "Material UI", "Radix UI", "Redux Toolkit", "Zustand"],
   backend: ["Node.js", "Express.js", "Fastify", "MongoDB", "PostgreSQL", "Prisma", "Redis", "RabbitMQ", "Socket.io", "WebRTC"],
   devops: ["Docker", "Electron.js", "AWS (EC2, ECS, S3)", "Jenkins", "CI/CD", "Code Signing", "App Notarization"],
-  ai: ["PyTorch", "TensorFlow", "LangChain", "LangGraph", "OpenAI API", "RAG Pipelines", "Pinecone", "Weaviate"]
+  ai: ["OpenAI API", "LangChain", "LangGraph", "RAG Pipelines", "Embeddings", "Vector Search", "Pinecone", "Weaviate", "Hugging Face", "PyTorch", "TensorFlow", "ANN", "CNN", "Prompt Engineering", "AI Evaluation", "Human Handoff"]
 };
 
 const EXPERIENCES = [
