@@ -2,10 +2,10 @@ export const DURATION = 45;
 export const LANE_WIDTH = 2.65;
 export const FIXED_STEP = 1 / 120;
 export const SKILLS = [
-  { label: "Python", short: "PY", color: "#ffcf6b", project: "Code Execution Platform", detail: "Queued, container-based execution for Python, Java, and C++.", href: "/#systems-lab" },
-  { label: "RAG / AI", short: "AI", color: "#c6a2ff", project: "AgentCore", detail: "Tenant-scoped knowledge retrieval, AI support, and human handoff.", href: "/#agentcore" },
-  { label: "React Native", short: "RN", color: "#80e2ff", project: "Virtual Focus Room", detail: "A shared co-working experience across web, mobile, and desktop.", href: "/#projects" },
-  { label: "Electron", short: "EL", color: "#99f3d2", project: "Trace Venue", detail: "Offline-first desktop workflows, native integrations, and POS printing.", href: "/#experience" },
+  { label: "Python", short: "PY", color: "#ffcf6b", project: "Code Execution Platform", detail: "Queued, container-based execution for Python and Java.", href: "/desk?device=systems" },
+  { label: "RAG / AI", short: "AI", color: "#c6a2ff", project: "AgentCore", detail: "Tenant-scoped knowledge retrieval, AI support, and human handoff.", href: "/desk?device=ai" },
+  { label: "React Native", short: "RN", color: "#80e2ff", project: "Virtual Focus Room", detail: "A shared co-working experience across web, mobile, and desktop.", href: "/desk?device=mobile" },
+  { label: "Electron", short: "EL", color: "#99f3d2", project: "Trace Venue", detail: "Offline-first desktop workflows, native integrations, and POS printing.", href: "/desk?device=desktop" },
 ] as const;
 export type Mode = "recruiter" | "endless";
 export type Action = "jump" | "slide";

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import styles from "./PortfolioExtras.module.css";
 
-type Project = { title: string; image: string; imageAlt: string; description: string; github: string; live?: string; stack: string[] };
+type Project = { title: string; image: string; imageAlt: string; description: string; github?: string; live?: string; video?: string; stack: string[] };
 
 export function QuickOverview() {
   const dialog = useRef<HTMLDialogElement>(null);
@@ -40,6 +40,7 @@ export function QuickOverview() {
         <div className={styles.actions}>
           <a className={styles.primary} href="#agentcore" onClick={close}>Read AgentCore case study</a>
           <a className={styles.link} href="#systems-lab" onClick={close}>Explore system design</a>
+          <a className={styles.link} href="/desk?tour=1" onClick={close}>Take the guided 3D tour</a>
           <a className={styles.link} href="/Aman_Anurag_Resume.pdf" target="_blank" rel="noreferrer">Résumé ↗</a>
           <a className={styles.link} href="mailto:amananurag.20@gmail.com">Email Aman ↗</a>
         </div>
@@ -60,14 +61,14 @@ export function ProjectShowcase({ projects }: { projects: Project[] }) {
       <div className={styles.perspective}>
         <div className={styles.browser}>
           <div className={styles.browserBar}><span aria-hidden="true">● ● ●</span><span>{project.title}</span><span>PREVIEW</span></div>
-          <div className={styles.screen}><Image key={project.image} src={project.image} alt={project.imageAlt} fill sizes="(max-width: 980px) 90vw, 60vw" /></div>
+          <div className={`${styles.screen} ${!project.image ? styles.demoScreen : ""}`}>{project.image ? <Image key={project.image} src={project.image} alt={project.imageAlt} fill sizes="(max-width: 980px) 90vw, 60vw" /> : <div className="project-demo-cover"><strong>{project.title}</strong><span>Real-time collaboration across web, desktop, and mobile.</span><a href="/desk?device=mobile&demo=1">Play the original project demo ↗</a></div>}</div>
         </div>
       </div>
       <div className={styles.showcaseCopy} aria-live="polite">
         <p className={styles.eyebrow}>SELECTED BUILD / {String(selected + 1).padStart(2, "0")}</p>
         <h3>{project.title}</h3><p>{project.description}</p>
         <div className={styles.tags}>{project.stack.map(tag => <span key={tag}>{tag}</span>)}</div>
-        <div className={styles.actions}>{project.live && <a className={styles.primary} href={project.live} target="_blank" rel="noreferrer">Live demo ↗</a>}<a className={styles.link} href={project.github} target="_blank" rel="noreferrer">Explore code ↗</a></div>
+        <div className={styles.actions}>{project.live && <a className={styles.primary} href={project.live} target="_blank" rel="noreferrer">Live demo ↗</a>}{project.github && <a className={styles.link} href={project.github} target="_blank" rel="noreferrer">Explore code ↗</a>}{project.video && <a className={styles.link} href={project.video} target="_blank" rel="noreferrer">Watch recording ↗</a>}</div>
       </div>
     </div>
   </div>;
@@ -76,7 +77,7 @@ export function ProjectShowcase({ projects }: { projects: Project[] }) {
 const studies = [
   { problem: "Remote collaboration spans video, shared work, and productivity tools.", contribution: "Built a cross-platform focus room with video, screen sharing, whiteboards, chat, and permissions.", decision: "Peer-to-peer media keeps video on a separate path from application events; Socket.io coordinates the shared experience.", result: "One workspace across web, desktop, and mobile with real-time collaboration." },
   { problem: "Learning workflows need to connect enrollment, content, practice, and progress.", contribution: "Built an LMS covering video learning, quizzes, coding tasks, payments, analytics, and desktop access.", decision: "Offline desktop access introduces synchronization concerns alongside the web learning experience.", result: "An end-to-end learning workflow, including Monaco-powered coding tasks." },
-  { problem: "User-submitted programs need isolated execution and asynchronous result delivery.", contribution: "Built a microservice-based judge for Java, Python, and C++ using queued submissions and Docker.", decision: "A queue separates request handling from execution; containers isolate execution environments. Container isolation still requires careful resource and security controls.", result: "Multi-language execution with queued processing and real-time result feedback." },
+  { problem: "User-submitted programs need isolated execution and asynchronous result delivery.", contribution: "Built a microservice-based judge for Python and Java using queued submissions and Docker.", decision: "A queue separates request handling from execution; containers isolate execution environments. Container isolation still requires careful resource and security controls.", result: "Multi-language execution with queued processing and real-time result feedback." },
   { problem: "A cloud IDE needs a terminal, isolated workspace, and consistent file state in the browser.", contribution: "Built container provisioning, streamed terminal output, and a synchronized file explorer.", decision: "WebSockets provide a persistent channel for terminal output and file events; connection lifecycle becomes part of the product design.", result: "Browser-based development backed by isolated Linux containers." },
 ];
 
@@ -103,7 +104,7 @@ export function AgentCoreCaseStudy() {
 const architecture = [
   { name: "Submission", title: "Accept work without waiting for execution.", detail: "The client sends a program and language to the API. Validation belongs at this boundary before a submission is queued.", tradeoff: "Design consideration: an accepted request and a completed execution are different states." },
   { name: "Queue", title: "Absorb bursts and separate workloads.", detail: "Queued submissions wait for execution capacity. Redis-backed queuing decouples the request lifecycle from slower execution work.", tradeoff: "Design consideration: bound the backlog and make retries observable." },
-  { name: "Docker worker", title: "Execute in an isolated environment.", detail: "A worker runs Java, Python, or C++ in a containerized environment and collects output for evaluation.", tradeoff: "Design consideration: time, memory, network, and process limits matter when handling untrusted code." },
+  { name: "Docker worker", title: "Execute in an isolated environment.", detail: "A worker runs Python or Java in a containerized environment and collects output for evaluation.", tradeoff: "Design consideration: time, memory, network, and process limits matter when handling untrusted code." },
   { name: "Result", title: "Close the feedback loop.", detail: "The client receives result feedback after execution so the submission can move from queued to a final state.", tradeoff: "Design consideration: clients need a recovery path if a live connection drops." },
 ];
 
