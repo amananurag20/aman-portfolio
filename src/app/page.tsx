@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
+import InteractivePortrait from "@/components/InteractivePortrait";
+import { QuickOverview, ProjectShowcase, ProjectCaseStudy, AgentCoreCaseStudy, SystemsLab, ScrollReveals } from "@/components/PortfolioExtras";
 import {
   ArrowDown,
   ArrowUpRight,
@@ -275,6 +277,7 @@ function SectionLabel({ episode, children }: { episode: string; children: ReactN
 export default function Home() {
   return (
     <main className="portfolio-shell">
+      <ScrollReveals />
       <nav className="site-nav" aria-label="Primary navigation">
         <a className="brand" href="#top" aria-label="Aman Anurag home">
           AMAN<span>.</span>
@@ -321,38 +324,14 @@ export default function Home() {
             <a className="button button-secondary" href="/Aman_Anurag_Resume.pdf" target="_blank">
               <Download size={16} /> Résumé
             </a>
+            <QuickOverview />
+            <a className="button button-secondary" href="/play">
+              <Play size={16} /> Play my portfolio
+            </a>
           </div>
         </div>
 
-        <aside className="hero-portrait-stage reveal-up delay-three" aria-label="Featured portrait of Aman Anurag">
-          <div className="portrait-halo" />
-          <div className="hero-portrait-card">
-            <Image
-              src="/assests/aman-hero-portrait-v3.png"
-              alt="Aman Anurag, Senior Full Stack Engineer"
-              fill
-              priority
-              unoptimized
-              sizes="(max-width: 980px) 80vw, 34vw"
-              className="hero-portrait-image"
-            />
-            <div className="portrait-vignette" />
-            <div className="portrait-scanline" />
-            <span className="featured-badge">FEATURED ENGINEER</span>
-            <div className="portrait-credit">
-              <div>
-                <span>AMAN ANURAG</span>
-                <small>SENIOR FULL STACK DEVELOPER</small>
-              </div>
-              <strong>AA</strong>
-            </div>
-          </div>
-          <div className="portrait-specs">
-            <span><strong>4+</strong> YEARS</span>
-            <span><strong>25+</strong> APIs</span>
-            <span><strong>99.9%</strong> UPTIME</span>
-          </div>
-        </aside>
+        <InteractivePortrait />
 
         <div className="hero-footer">
           <span>SCROLL TO EXPLORE</span>
@@ -541,6 +520,8 @@ export default function Home() {
           ))}
         </div>
 
+        <AgentCoreCaseStudy />
+
         <div className="case-study-proof">
           <span>PRODUCTION ENGINEERING, NOT A PROTOTYPE</span>
           <p>
@@ -601,6 +582,7 @@ export default function Home() {
           </div>
           <p>Four products that show how I think about architecture, interaction, and scale.</p>
         </div>
+        <ProjectShowcase projects={projects} />
         <div className="projects-grid">
           {projects.map((project, index) => (
             <article className={`project-card project-${index + 1}`} key={project.title}>
@@ -626,6 +608,7 @@ export default function Home() {
                 <div className="stack-row">
                   {project.stack.map((item) => <span key={item}>{item}</span>)}
                 </div>
+                <ProjectCaseStudy index={index} />
               </div>
             </article>
           ))}
@@ -634,6 +617,8 @@ export default function Home() {
           Explore all repositories <ArrowUpRight size={16} />
         </a>
       </section>
+
+      <SystemsLab />
 
       <section className="content-section proof-section">
         <div className="proof-card education-card">
@@ -689,3 +674,4 @@ export default function Home() {
     </main>
   );
 }
+
