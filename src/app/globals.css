@@ -18,6 +18,19 @@ body { margin: 0; background: var(--ink); color: var(--paper); font-family: Aria
 ::selection { background: var(--signal); color: white; }
 a { color: inherit; text-decoration: none; }
 
+.project-demo-cover { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; padding: 24px; text-align: center; background: radial-gradient(ellipse at top, #272338, #0e1018); }
+.project-image-wrap .project-demo-cover { padding: 28px 20px 58px; gap: 8px; }
+.project-image-wrap .project-demo-cover > strong { font-size: clamp(1.3rem, 3vw, 2rem); }
+.project-image-wrap .project-demo-cover > span { font-size: .875rem; }
+.project-demo-wrap { aspect-ratio: auto !important; min-height: 230px; }
+.project-demo-wrap .project-demo-cover { position: relative; min-height: 230px; }
+.project-demo-wrap .project-image-shade { display: none; }
+.project-demo-cover > svg { color: #92dfff; }
+.project-demo-cover > strong { font-size: clamp(1.3rem, 3vw, 2.5rem); line-height: 1.1; letter-spacing: -.04em; }
+.project-demo-cover > span { color: #bcb8ca; font-size: 1rem; line-height: 1.5; }
+.project-demo-cover > a { position: relative; z-index: 3; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #8982a1; border-radius: 6px; padding: 12px 15px; color: #e7dffb; font-size: .875rem; }
+.project-demo-cover > a:focus-visible { outline: 2px solid #ffcf7f; outline-offset: 5px; }
+
 .portfolio-shell {
   min-height: 100vh;
   overflow: hidden;

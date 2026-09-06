@@ -116,8 +116,9 @@ const projects = [
     description:
       "A cross-platform virtual co-working space with peer-to-peer video, screen sharing, collaborative whiteboards, chat, permissions, and integrated productivity tools.",
     stack: ["React", "Electron", "React Native", "WebRTC", "Socket.io"],
-    image: "/assests/studybud.png",
-    imageAlt: "Virtual productivity platform interface",
+    image: "",
+    imageAlt: "",
+    video: "https://youtu.be/wLVO5xj3O2Q",
     live: "https://virtual-focus-room.vercel.app",
     github: "https://github.com/amananurag20/Virtual-focus-room",
   },
@@ -131,18 +132,18 @@ const projects = [
     image: "/assests/project/course management/c1.png",
     imageAlt: "Course management system login interface",
     live: "https://course-management-opal.vercel.app/",
-    github: "https://github.com/amananurag20/course-management",
+    video: "https://youtu.be/W2NJIZ1l7sQ",
   },
   {
     number: "03",
     title: "Code Execution Platform",
     eyebrow: "DISTRIBUTED SYSTEMS",
     description:
-      "A LeetCode-style, microservice-based judge that executes Java, Python, and C++ safely in Docker, with queued submissions and real-time result feedback.",
+      "A microservice-based judge that evaluates Python and Java in Docker containers, with queued submissions and real-time result feedback.",
     stack: ["TypeScript", "Fastify", "Redis", "Docker", "AWS"],
     image: "/assests/project/algocode/a0.png",
     imageAlt: "Code execution platform interface",
-    github: "https://github.com/amananurag20/AlgoCode-Problem-Service",
+    github: "https://github.com/amananurag20/Full-backend-algocode",
   },
   {
     number: "04",
@@ -287,6 +288,7 @@ export default function Home() {
           <a href="#experience">Experience</a>
           <a href="#stack">Skills</a>
           <a href="#projects">Work</a>
+          <a href="/desk">3D desk</a>
         </div>
         <a className="nav-cta" href="#contact">
           Let&apos;s talk <ArrowUpRight size={15} />
@@ -318,8 +320,8 @@ export default function Home() {
             <span>Production ownership</span>
           </div>
           <div className="hero-actions reveal-up delay-four">
-            <a className="button button-primary" href="#projects">
-              <Play size={16} fill="currentColor" /> View selected work
+            <a className="button button-primary" href="/desk">
+              <MonitorSmartphone size={16} /> Explore my 3D desk
             </a>
             <a className="button button-secondary" href="/Aman_Anurag_Resume.pdf" target="_blank">
               <Download size={16} /> Résumé
@@ -586,8 +588,8 @@ export default function Home() {
         <div className="projects-grid">
           {projects.map((project, index) => (
             <article className={`project-card project-${index + 1}`} key={project.title}>
-              <div className="project-image-wrap">
-                <Image src={project.image} alt={project.imageAlt} fill sizes="(max-width: 900px) 100vw, 50vw" />
+              <div className={`project-image-wrap ${!project.image ? "project-demo-wrap" : ""}`}>
+                {project.image ? <Image src={project.image} alt={project.imageAlt} fill sizes="(max-width: 900px) 100vw, 50vw" /> : <div className="project-demo-cover"><strong>Virtual Focus Room</strong><span>Web · React Native · Electron</span></div>}
                 <div className="project-image-shade" />
                 <span className="project-number">{project.number}</span>
                 <div className="project-links">
@@ -596,9 +598,10 @@ export default function Home() {
                       <Play size={16} fill="currentColor" /> Live
                     </a>
                   )}
-                  <a href={project.github} target="_blank" rel="noreferrer" aria-label={`View ${project.title} on GitHub`}>
+                  {project.github && <a href={project.github} target="_blank" rel="noreferrer" aria-label={`View ${project.title} on GitHub`}>
                     <Github size={16} /> Code
-                  </a>
+                  </a>}
+                  {project.video && <a href={project.video} target="_blank" rel="noreferrer" aria-label={`Watch ${project.title} demo`}><Play size={16} /> Demo</a>}
                 </div>
               </div>
               <div className="project-copy">
@@ -674,4 +677,3 @@ export default function Home() {
     </main>
   );
 }
-

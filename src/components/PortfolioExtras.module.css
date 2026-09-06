@@ -29,6 +29,8 @@
 .browserBar span:last-child { font-size: .65rem; }
 .screen { position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; }
 .screen img { object-fit: cover; object-position: top; }
+.demoScreen { aspect-ratio: auto; min-height: 240px; }
+.demoScreen > div { position: relative; min-height: 240px; }
 .showcaseCopy { min-width: 0; }
 .showcaseCopy h3, .explanation h3, .playground h3, .caseGrid h3 { font-size: clamp(1.5rem, 2.8vw, 2.4rem); line-height: 1.1; letter-spacing: -.035em; margin: 0 0 18px; }
 .showcaseCopy p, .explanation p, .playground p, .caseGrid article > p:last-child { color: #b4b4be; font-size: 1rem; line-height: 1.7; }
